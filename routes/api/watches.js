@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
 
 router.get('/:watchBrand', async (req, res) => {
     try {
-        const watch = await getByMarca(req.params.watchWatch_Brand)
+        const watch = await getByMarca(req.params.watchBrand)
         if (watch) {
             res.json(watch);
         } else {

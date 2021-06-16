@@ -11,9 +11,10 @@ router.get('/', async (req, res) => {
 
 // GET http://localhost:3000/watches/rolex
 router.get('/:watchMarca', async (req, res) => {
+    console.log(req.params);
     //recuperar clientes por id
-    const watch = await getByMarca(req.params);
-    res.render('watch/watch_brand', { watch });
+    const watch = await getByMarca(req.params.watchMarca);
+    res.json(watch);
 });
 
 // POST http://localhost:3000/watches/create

@@ -4,7 +4,7 @@ GET http://localhost:3000/api/watches
 ###
 
 //relojes por Marca
-GET http://localhost:3000/api/watches/Rolex
+GET http://localhost:3000/api/watches/rolex
 
 ###
 
@@ -29,5 +29,6 @@ Content-Type: application/json
                  "limited":"no",
                   "material":"wefewf",
                    "diameter":42,
-                    "dial_color":"rojo"
+                    "dial_color":"rojo",
+                    "imagen":"https://media2.bulgari.com/f_auto,q_auto/production/dwa8bf1be3/images/images/479119.png"
 }
