@@ -1,1 +1,5 @@
-GET http://localhost:3000/api/clientes
+GET http://localhost:3000/api/watches
+
+###
+
+GET http://localhost:3000/api/watches/2
