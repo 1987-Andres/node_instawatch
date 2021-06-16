@@ -12,8 +12,8 @@ POST http://localhost:3000/api/watches
 Content-Type: application/json
 
 {
-   "watch_brand":"omega",
-    "watch_model":"casa",
+   "watch_brand":"xiaomi",
+    "watch_model":"miband5",
      "release_year":"2000",
       "market_price":200,
        "retail_price":150,
