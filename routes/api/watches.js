@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { getAll, getById } = require('../../models/watches.model');
+const { getAll, getByMarca, create } = require('../../models/watches.model');
 
 router.get('/', async (req, res) => {
     try {
@@ -10,16 +10,22 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/:watchId', async (req, res) => {
+router.get('/:watchBrand', async (req, res) => {
     try {
-        const watch = await getById(req.params.watchId)
+        const watch = await getByMarca(req.params.watchWatch_Brand)
         if (watch) {
             res.json(watch);
         } else {
-            res.json({ message: 'El id del reloj no existe' });
+            res.json({ message: 'La marca del reloj no existe' });
         }
     } catch (error) {
         res.json({ error: 'No funciona' });
     }
 });
+
+router.post('/', async (req, res) => {
+    const result = await create(req.body);
+    res.json(result);
+});
+
 module.exports = router;

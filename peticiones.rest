@@ -1,5 +1,33 @@
+//todos los relojes
 GET http://localhost:3000/api/watches
 
 ###
 
-GET http://localhost:3000/api/watches/2
+//relojes por Marca
+GET http://localhost:3000/api/watches/Rolex
+
+###
+
+POST http://localhost:3000/api/watches
+Content-Type: application/json
+
+{
+   "watch_brand":"omega",
+    "watch_model":"casa",
+     "release_year":"2000",
+      "market_price":200,
+       "retail_price":150,
+        "owner":"cscsc",
+         "availability":"yes",
+          "notes":"dclñ sldvldslvmlsdvld´lv",
+           "box_included":"yes",
+            "assignment_date":"2005",
+             "features":"wvwvw",
+              "family":"ergrg",
+               "movement":"ergrwg",
+                "purchase_year":"2010",
+                 "limited":"no",
+                  "material":"wefewf",
+                   "diameter":42,
+                    "dial_color":"rojo"
+}

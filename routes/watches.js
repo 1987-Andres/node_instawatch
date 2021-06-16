@@ -9,9 +9,15 @@ router.get('/', async (req, res) => {
     const watches = await getAll();
 });
 
-router.get('/:watchId', async (req, res) => {
-    const watch = await getById(req.params.watchId);
-    res.render('watch/detail', { watch });
+router.get('/:watchMarca', async (req, res) => {
+    //recuperar clientes por id
+    const watch = await getByMarca(req.params.watchWatch_Brand);
+    res.render('watch/watch_brand', { watch });
+});
+
+// POST http://localhost:3000/watches/create
+router.post('/create', (req, res) => {
+    res.end('watches create');
 });
 
 module.exports = router;
