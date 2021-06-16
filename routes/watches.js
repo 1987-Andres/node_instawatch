@@ -9,9 +9,10 @@ router.get('/', async (req, res) => {
     const watches = await getAll();
 });
 
+// GET http://localhost:3000/watches/rolex
 router.get('/:watchMarca', async (req, res) => {
     //recuperar clientes por id
-    const watch = await getByMarca(req.params.watchWatch_Brand);
+    const watch = await getByMarca(req.params);
     res.render('watch/watch_brand', { watch });
 });
 
