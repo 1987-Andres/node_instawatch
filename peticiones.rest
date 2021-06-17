@@ -12,8 +12,8 @@ POST http://localhost:3000/api/watches
 Content-Type: application/json
 
 {
-   "watch_brand":"Apple",
-    "watch_model":"Puta mierda",
+   "watch_brand":"Cartier",
+    "watch_model":"Carisimo",
      "release_year":"2021",
       "market_price":9845125412566,
        "retail_price":9845125412566,
@@ -31,4 +31,25 @@ Content-Type: application/json
                    "diameter":42,
                     "dial_color":"verde",
                     "imagen":"https://www.granadadigital.es/wp-content/uploads/2015/04/reloj-manzana-apple-watch.jpg"
+}
+
+###
+
+//todos los posts del foro
+GET http://localhost:3000/api/foro
+
+###
+
+//post por categoria
+GET http://localhost:3000/api/foro/compra-venta
+
+###
+
+POST http://localhost:3000/api/foro
+Content-Type: application/json
+
+{
+   "titulo":"muy güenas",
+   "descripcion":"buenos dias por la mañana",
+   "categoria":"saludo"
 }
