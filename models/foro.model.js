@@ -26,6 +26,29 @@ const createPost = ({ titulo, descripcion, categoria }) => {
     });
 }
 
+const update = (pPostId, { titulo, descripcion, categoria }) => {
+    return new Promise((resolve, reject) => {
+        db.query(
+            'UPDATE nuevo_post SET titulo= ?, descripcion= ?, categoria=? WHERE id=?',
+            [titulo, descripcion, categoria, pPostId],
+            (err, result) => {
+                if (err) reject(err);
+                resolve(result);
+            });
+    });
+}
+
+const deleteById = (pPostId) => {
+    return new Promise((resolve, reject) => {
+        db.query('delete from nuevo_post where id = ?', [pPostId], (err, result) => {
+            if (err) reject(err);
+            resolve(result);
+        });
+    });
+}
+
+
+
 module.exports = {
-    getAllPosts, getByCategoria, createPost
+    getAllPosts, getByCategoria, createPost, update, deleteById
 }

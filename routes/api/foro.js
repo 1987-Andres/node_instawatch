@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { getAllPosts, getByCategoria, createPost } = require('../../models/foro.model');
+const { getAllPosts, getByCategoria, createPost, update, deleteById } = require('../../models/foro.model');
 
 router.get('/', async (req, res) => {
     try {
@@ -28,8 +28,18 @@ router.post('/', async (req, res) => {
     res.json(result);
 });
 
+router.put('/:postId', async (req, res) => {
+    try {
+        const result = await update(req.params.id, req.body);
+        res.json(result);
+    } catch (error) {
+        console.log(error);
+    }
+});
 
-
-
+router.delete('/:postId', async (req, res) => {
+    const result = await deleteById(req.params.Id);
+    res.json(result);
+});
 
 module.exports = router;

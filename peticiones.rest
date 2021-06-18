@@ -45,6 +45,7 @@ GET http://localhost:3000/api/foro/compra-venta
 
 ###
 
+//nuevo post
 POST http://localhost:3000/api/foro
 Content-Type: application/json
 
@@ -53,3 +54,19 @@ Content-Type: application/json
    "descripcion":"buenos dias por la mañana",
    "categoria":"saludo"
 }
+
+###
+
+//editar post
+PUT http://localhost:3000/api/foro/2
+Content-Type: application/json
+
+{
+   "titulo":"buenas",
+   "descripcion":"que tal tio",
+   "categoria":"saludo"
+}
+
+###
+//borrar post
+DELETE http://localhost:3000/api/foro/7
