@@ -29,7 +29,7 @@ const createPost = ({ titulo, descripcion, categoria }) => {
 const update = (pPostId, { titulo, descripcion, categoria }) => {
     return new Promise((resolve, reject) => {
         db.query(
-            'UPDATE nuevo_post SET titulo= ?, descripcion= ?, categoria=? WHERE id=?',
+            'UPDATE nuevo_post SET titulo=?, descripcion=?, categoria=? WHERE id=?',
             [titulo, descripcion, categoria, pPostId],
             (err, result) => {
                 if (err) reject(err);

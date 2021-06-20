@@ -30,7 +30,7 @@ router.post('/', async (req, res) => {
 
 router.put('/:postId', async (req, res) => {
     try {
-        const result = await update(req.params.id, req.body);
+        const result = await update(req.params.postId, req.body);
         res.json(result);
     } catch (error) {
         console.log(error);
@@ -38,7 +38,7 @@ router.put('/:postId', async (req, res) => {
 });
 
 router.delete('/:postId', async (req, res) => {
-    const result = await deleteById(req.params.Id);
+    const result = await deleteById(req.params.postId);
     res.json(result);
 });
 
