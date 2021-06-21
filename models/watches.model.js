@@ -1,6 +1,6 @@
 const getAll = () => {
     return new Promise((resolve, reject) => {
-        db.query('SELECT * FROM heroku_bf6019206e7eabe.watches', (err, rows) => {
+        db.query('SELECT * FROM watches', (err, rows) => {
             if (err) reject(err);
             resolve(rows);
         })
@@ -9,7 +9,7 @@ const getAll = () => {
 
 const getByMarca = (pWatchBrand) => {
     return new Promise((resolve, reject) => {
-        db.query(`SELECT * FROM heroku_bf6019206e7eabe.watches where watch_brand="${pWatchBrand}"`, (err, rows) => {
+        db.query(`SELECT * FROM watches where watch_brand="${pWatchBrand}"`, (err, rows) => {
             if (err) reject(err);
             resolve(rows);
         })

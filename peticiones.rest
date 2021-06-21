@@ -12,25 +12,25 @@ POST http://localhost:3000/api/watches
 Content-Type: application/json
 
 {
-   "watch_brand":"Cartier",
-    "watch_model":"Carisimo",
-     "release_year":"2021",
+      "watch_brand":"Cartier",
+      "watch_model":"Carisimo",
+      "release_year":"2021",
       "market_price":9845125412566,
-       "retail_price":9845125412566,
-        "owner":"Juanan",
-         "availability":"yes",
-          "notes":"Paga por la misma tecnologia que salio hace 2 años y pagala 1000000 veces mas cara y por si no fuera poco despues te cobramos hasta por respirar",
-           "box_included":"DE PAGO",
-            "assignment_date":"2021",
-             "features":"wvwvw",
-              "family":"ergrg",
-               "movement":"ergrwg",
-                "purchase_year":"2010",
-                 "limited":"yes",
-                  "material":"wefewf",
-                   "diameter":42,
-                    "dial_color":"verde",
-                    "imagen":"https://www.granadadigital.es/wp-content/uploads/2015/04/reloj-manzana-apple-watch.jpg"
+      "retail_price":9845125412566,
+      "owner":"Juanan",
+      "availability":"yes",
+      "notes":"Paga por la misma tecnologia que salio hace 2 años y pagala 1000000 veces mas cara y por si no fuera poco despues te cobramos hasta por respirar",
+      "box_included":"DE PAGO",
+      "assignment_date":"2021",
+      "features":"wvwvw",
+      "family":"ergrg",
+      "movement":"ergrwg",
+      "purchase_year":"2010",
+      "limited":"yes",
+      "material":"wefewf",
+      "diameter":42,
+      "dial_color":"verde",
+      "imagen":"https://www.granadadigital.es/wp-content/uploads/2015/04/reloj-manzana-apple-watch.jpg"
 }
 
 ###

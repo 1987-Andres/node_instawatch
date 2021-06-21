@@ -39,7 +39,6 @@ router.post('/login', async (req, res) => {
 
 
   const iguales = bcrypt.compareSync(req.body.password, usuario.password);
-  console.log(req.body.password);
   if (iguales) {
     res.json({ success: 'Perfecto', token: createToken(usuario) });
   } else {
