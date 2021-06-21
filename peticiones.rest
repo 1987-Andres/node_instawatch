@@ -71,5 +71,28 @@ Content-Type: application/json
 //borrar post
 DELETE http://localhost:3000/api/foro/25
 
+### API Usuarios
+POST http://localhost:3000/api/users/registro
+Content-Type: application/json
+
+{
+    "nombre": "Perico",
+    "apellidos": "palotes",
+    "direccion": "italia 25",
+    "sexo": "hombre",
+    "fecha_nacimiento": "10/02/2000",
+    "email": "perico@gmail.com",
+    "password": "Perico123",
+    "repite_password": "Perico123"
+}
+
 ###
-POST http://localhost:3000/
+POST http://localhost:3000/api/users/login
+Content-Type: application/json
+
+{
+    "email": "perico@gmail.com",
+    "password": "Perico123"
+}
+
+###
