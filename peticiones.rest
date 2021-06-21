@@ -50,8 +50,8 @@ POST http://localhost:3000/api/foro
 Content-Type: application/json
 
 {
-   "titulo":"muy güenas",
-   "descripcion":"buenos dias por la mañana",
+   "titulo":"tontaco2",
+   "descripcion":"hellowwwww",
    "categoria":"saludo"
 }
 
@@ -69,4 +69,4 @@ Content-Type: application/json
 
 ###
 //borrar post
-DELETE http://localhost:3000/api/foro/7
+DELETE http://localhost:3000/api/foro/25
