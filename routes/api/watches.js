@@ -11,6 +11,11 @@ router.get('/', async (req, res) => {
     }
 });
 
+router.get('/usuario/', checkToken, async (req, res) => {
+    const relojes = await getByUser(req.user.id);
+    res.json(relojes);
+})
+
 router.get('/:watchId', async (req, res) => {
     const reloj = await getById(req.params.watchId);
     res.json(reloj);
@@ -36,10 +41,7 @@ router.post('/', checkToken, async (req, res) => {
     res.json(result);
 });
 
-router.get('/usuario/:fk_user', checkToken, async (req, res) => {
-    const relojes = await getByUser(req.params.fk_user);
-    res.json(relojes);
-})
+
 
 
 

@@ -133,6 +133,6 @@ GET http://localhost:3000/api/watches/7
 
 ###
 //reloj por usuario
-GET http://localhost:3000/api/watches/usuario/35
+GET http://localhost:3000/api/watches/usuario/
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjozNSwiY2FkdWNpZGFkIjoxNjI0OTc3MDQwLCJpYXQiOjE2MjQzNzIyNDB9.r41I24bCV2E3jSASg1-uFKcD5llc1PPiyP7g13Pdhrs
 ###

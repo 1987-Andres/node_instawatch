@@ -39,11 +39,11 @@ const getById = (pWatchId) => {
 }
 
 const getByUser = (pFk_owner) => {
+    console.log(pFk_owner);
     return new Promise((resolve, reject) => {
         db.query(`SELECT * FROM watches WHERE fk_owner="${pFk_owner}"`, (err, rows) => {
             if (err) reject(err);
-            if (rows.length !== 1) resolve(null);
-            resolve(rows[0]);
+            resolve(rows)
         })
     });
 }
