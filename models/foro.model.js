@@ -1,6 +1,6 @@
 const getAllPosts = () => {
     return new Promise((resolve, reject) => {
-        db.query('SELECT * FROM instawatch.nuevo_post', (err, rows) => {
+        db.query('SELECT * FROM nuevo_post', (err, rows) => {
             if (err) reject(err);
             resolve(rows);
         })
@@ -8,7 +8,7 @@ const getAllPosts = () => {
 }
 const getByCategoria = (pCategoria) => {
     return new Promise((resolve, reject) => {
-        db.query(`SELECT * FROM instawatch.nuevo_post where categoria="${pCategoria}"`, (err, rows) => {
+        db.query(`SELECT * FROM nuevo_post where categoria="${pCategoria}"`, (err, rows) => {
             if (err) reject(err);
             resolve(rows);
         })
