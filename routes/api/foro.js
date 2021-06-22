@@ -24,6 +24,7 @@ router.get('/:categoria', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
+    console.log(req.body);
     const result = await createPost(req.body);
     res.json(result);
 });

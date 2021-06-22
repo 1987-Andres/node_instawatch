@@ -41,7 +41,7 @@ GET http://localhost:3000/api/foro
 ###
 
 //post por categoria
-GET http://localhost:3000/api/foro/compra-venta
+GET http://localhost:3000/api/foro/dudillas
 
 ###
 
