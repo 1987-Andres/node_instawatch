@@ -96,3 +96,43 @@ Content-Type: application/json
 }
 
 ###
+
+###
+
+//todos los relojes
+GET http://localhost:3000/api/watches/
+
+###
+
+### Crear reloj
+POST http://localhost:3000/api/watches
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjozNSwiY2FkdWNpZGFkIjoxNjI0OTcyNzQwLCJpYXQiOjE2MjQzNjc5NDB9.mtUEMdueJyaPkXHrK3I75sR8zZ4RStUNWNZpfJ2FK-k
+
+{
+     "watch_brand":"Rolex",
+     "watch_model":"Daytono",
+     "owner":"Luis",
+     "availability":"yes",
+     "notes":"Cronografo deportivo",
+     "movement":"Manufactura",
+     "material":"Steel",
+     "dial_color":"White",
+     "imagen":"https://cdn-images.farfetch-contents.com/16/58/04/93/16580493_32299814_1000.jpg" 
+}
+
+###
+
+//reloj por marca
+GET http://localhost:3000/api/watches/marca/rolex
+
+###
+
+//reloj por id
+GET http://localhost:3000/api/watches/7
+
+###
+//reloj por usuario
+GET http://localhost:3000/api/watches/usuario/35
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjozNSwiY2FkdWNpZGFkIjoxNjI0OTc3MDQwLCJpYXQiOjE2MjQzNzIyNDB9.r41I24bCV2E3jSASg1-uFKcD5llc1PPiyP7g13Pdhrs
+###

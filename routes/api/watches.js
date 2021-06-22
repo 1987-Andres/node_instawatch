@@ -1,5 +1,6 @@
 const router = require('express').Router();
-const { getAll, getByMarca, create } = require('../../models/watches.model');
+const { getAll, getByMarca, create, getById, getByUser } = require('../../models/watches.model');
+const { checkToken } = require('../middleware');
 
 router.get('/', async (req, res) => {
     try {
@@ -10,7 +11,12 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/:watchBrand', async (req, res) => {
+router.get('/:watchId', async (req, res) => {
+    const reloj = await getById(req.params.watchId);
+    res.json(reloj);
+})
+
+router.get('/marca/:watchBrand', async (req, res) => {
     try {
         const watch = await getByMarca(req.params.watchBrand)
         if (watch) {
@@ -23,10 +29,19 @@ router.get('/:watchBrand', async (req, res) => {
     }
 });
 
-router.post('/', async (req, res) => {
+router.post('/', checkToken, async (req, res) => {
+    console.log(req.user);
+    req.body.fk_owner = req.user.id
     const result = await create(req.body);
     res.json(result);
 });
+
+router.get('/usuario/:fk_user', checkToken, async (req, res) => {
+    const relojes = await getByUser(req.params.fk_user);
+    res.json(relojes);
+})
+
+
 
 
 
