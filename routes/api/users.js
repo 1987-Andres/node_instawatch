@@ -31,7 +31,7 @@ router.post('/registro', [
 });
 
 router.post('/login', async (req, res) => {
-
+  console.log(req.body);
   const usuario = await getByEmail(req.body.email);
   if (!usuario) {
     return res.json({ error: 'error en email y/o password 1' });
