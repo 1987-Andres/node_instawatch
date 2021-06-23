@@ -1,6 +1,6 @@
-const createClient = ({ nombre, apellidos, direccion, sexo, fecha_nacimiento, email, password, repite_password }) => {
+const createClient = ({ nombre, apellidos, direccion, sexo, fecha_nacimiento, email, password, repite_password, imagen }) => {
     return new Promise((resolve, reject) => {
-        db.query('INSERT INTO users (nombre, apellidos, direccion, sexo, fecha_nacimiento, email, password, repite_password) VALUES (?, ?, ?, ?, ?, ?, ?, ?)', [nombre, apellidos, direccion, sexo, fecha_nacimiento, email, password, repite_password], (err, result) => {
+        db.query('INSERT INTO users (nombre, apellidos, direccion, sexo, fecha_nacimiento, email, password, repite_password, imagen) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)', [nombre, apellidos, direccion, sexo, fecha_nacimiento, email, password, repite_password, imagen], (err, result) => {
             if (err) reject(err)
             if (result) {
                 resolve(result)
@@ -27,6 +27,18 @@ const getById = (pId) => {
     });
 }
 
+const update = (pUserId, { nombre, apellidos, direccion, sexo, fecha_nacimiento, email, imagen }) => {
+    return new Promise((resolve, reject) => {
+        db.query(
+            'UPDATE users SET nombre=?, apellidos=?, direccion=?, sexo=?, fecha_nacimiento=?, email=?, imagen=? WHERE id=?',
+            [nombre, apellidos, direccion, sexo, fecha_nacimiento, email, imagen, pUserId],
+            (err, result) => {
+                if (err) reject(err);
+                resolve(result);
+            });
+    });
+}
+
 module.exports = {
-    createClient, getByEmail, getById
+    createClient, getByEmail, getById, update
 }

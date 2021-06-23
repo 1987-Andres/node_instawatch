@@ -1,4 +1,4 @@
-const { createClient, getByEmail } = require('../../models/users.model');
+const { createClient, getByEmail, getById, update } = require('../../models/users.model');
 
 const router = require('express').Router();
 const bcrypt = require('bcryptjs');
@@ -58,5 +58,21 @@ function createToken(pUsuario) {
   }
   return jwt.sign(obj, 'token creado');
 }
+
+router.get('/perfil/:id', checkToken, async (req, res) => {
+  console.log(req.user);
+  const datos = await getById(req.user.id);
+  res.json(datos);
+})
+
+router.post('/perfil/', checkToken, async (req, res) => {
+  try {
+    const result = await update(req.user.id, req.body);
+    res.json(result);
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 
 module.exports = router;

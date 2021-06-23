@@ -26,6 +26,7 @@ const checkToken = async (req, res, next) => {
     const usuario = await getById(obj.usuario_id);
 
     req.user = usuario;
+    console.log(usuario);
 
     next();
 }

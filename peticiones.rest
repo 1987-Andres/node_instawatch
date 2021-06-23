@@ -8,6 +8,7 @@ GET http://localhost:3000/api/watches/rolex
 
 ###
 
+//Crear reloj
 POST http://localhost:3000/api/watches
 Content-Type: application/json
 
@@ -91,8 +92,8 @@ POST http://localhost:3000/api/users/login
 Content-Type: application/json
 
 {
-    "email": "perico@gmail.com",
-    "password": "Perico123"
+    "email": "andres@gmail.com",
+    "password": "Andres123"
 }
 
 ###
@@ -136,3 +137,24 @@ GET http://localhost:3000/api/watches/7
 GET http://localhost:3000/api/watches/usuario/
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjozNSwiY2FkdWNpZGFkIjoxNjI0OTc3MDQwLCJpYXQiOjE2MjQzNzIyNDB9.r41I24bCV2E3jSASg1-uFKcD5llc1PPiyP7g13Pdhrs
 ###
+
+//datos de usuario por id
+GET http://localhost:3000/api/users/perfil/55
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjo1NSwiY2FkdWNpZGFkIjoxNjI1MDQyMzkwLCJpYXQiOjE2MjQ0Mzc1OTB9.KrWTVrtg80jtdRX7nVz3CZF8yECTO6r8ppDykJWxaC8
+
+###
+//editar perfil usuario
+
+POST http://localhost:3000/api/users/perfil
+Content-Type: application/json
+
+
+{
+   "nombre":"Andres",
+   "apellidos":"Mellado",
+   "direccion":"Gran Via, 100",
+   "sexo":"Masculino",
+   "fecha_nacimiento":"2000-08-20",
+   "email":"andres@gmail.com",
+   "imagen":"https://www.hola.com/imagenes//ninos/2005041243380/ninos/monstruo/galletas/0-143-564/2005-04-12-a.jpg?filter=w400"
+}
