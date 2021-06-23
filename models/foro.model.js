@@ -47,8 +47,15 @@ const deleteById = (pPostId) => {
     });
 }
 
-
+const getById = (pPostId) => {
+    return new Promise((resolve, reject) => {
+        db.query(`SELECT * FROM nuevo_post where id="${pPostId}"`, (err, rows) => {
+            if (err) reject(err);
+            resolve(rows);
+        });
+    });
+}
 
 module.exports = {
-    getAllPosts, getByCategoria, createPost, update, deleteById
+    getAllPosts, getByCategoria, createPost, update, deleteById, getById
 }

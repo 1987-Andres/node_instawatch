@@ -1,5 +1,6 @@
 const router = require('express').Router();
-const { getAllPosts, getByCategoria, createPost, update, deleteById } = require('../../models/foro.model');
+const { getAllPosts, getByCategoria, createPost, update, deleteById, getById } = require('../../models/foro.model');
+const { checkToken } = require('../middleware');
 
 router.get('/', async (req, res) => {
     try {
@@ -7,6 +8,19 @@ router.get('/', async (req, res) => {
         res.json(rows);
     } catch (err) {
         res.json({ error: 'TODO MAL!!!' })
+    }
+});
+
+router.get('/post/:id', async (req, res) => {
+    try {
+        const id = await getById(req.params.id)
+        if (id) {
+            res.json(id);
+        } else {
+            res.json({ message: 'El id no existe' });
+        }
+    } catch (error) {
+        res.json({ error: 'No funciona' });
     }
 });
 
@@ -42,5 +56,6 @@ router.delete('/:postId', async (req, res) => {
     const result = await deleteById(req.params.postId);
     res.json(result);
 });
+
 
 module.exports = router;
