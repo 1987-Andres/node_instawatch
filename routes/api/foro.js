@@ -59,8 +59,9 @@ router.post('/', async (req, res) => {
 });
 
 router.post('/respuesta', async (req, res) => {
-    console.log(req.body);
+    const post = await getById(req.params.id)
     const result = await createRespuesta(req.body);
+    post.respuestas = respuestas;
     res.json(result);
 });
 
