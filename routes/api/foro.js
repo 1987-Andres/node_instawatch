@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { getAllPosts, getByCategoria, createPost, update, deleteById, getById } = require('../../models/foro.model');
+const { getAllPosts, getByCategoria, createPost, update, deleteById, getById, createRespuesta, getRespuestasId, getRespuestasfk } = require('../../models/foro.model');
 const { checkToken } = require('../middleware');
 
 router.get('/', async (req, res) => {
@@ -13,7 +13,22 @@ router.get('/', async (req, res) => {
 
 router.get('/post/:id', async (req, res) => {
     try {
-        const id = await getById(req.params.id)
+        const post = await getById(req.params.id)
+        const respuestas = await getRespuestasfk(req.params.id)
+        post.respuestas = respuestas;
+        if (post) {
+            res.json(post);
+        } else {
+            res.json({ message: 'El post no existe' });
+        }
+    } catch (error) {
+        res.json({ error: 'No funciona' });
+    }
+});
+
+router.get('/respuesta/:id', async (req, res) => {
+    try {
+        const id = await getRespuestasId(req.params.id)
         if (id) {
             res.json(id);
         } else {
@@ -43,6 +58,12 @@ router.post('/', async (req, res) => {
     res.json(result);
 });
 
+router.post('/respuesta', async (req, res) => {
+    console.log(req.body);
+    const result = await createRespuesta(req.body);
+    res.json(result);
+});
+
 router.put('/:postId', async (req, res) => {
     try {
         const result = await update(req.params.postId, req.body);
@@ -56,6 +77,8 @@ router.delete('/:postId', async (req, res) => {
     const result = await deleteById(req.params.postId);
     res.json(result);
 });
+
+
 
 
 module.exports = router;

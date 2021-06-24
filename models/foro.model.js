@@ -56,6 +56,25 @@ const getById = (pPostId) => {
     });
 }
 
+const createRespuesta = ({ descripcion, fk_post }) => {
+    return new Promise((resolve, reject) => {
+        db.query(
+            'insert into forum_respuestas (descripcion, fk_post) values(?,?)', [descripcion, fk_post],
+            (err, result) => {
+                if (err) reject(err);
+                resolve(result);
+            });
+    });
+}
+
+const getRespuestasfk = (pRespuestaFk) => {
+    return new Promise((resolve, reject) => {
+        db.query(`SELECT * FROM forum_respuestas where fk_post="${pRespuestaFk}"`, (err, rows) => {
+            if (err) reject(err);
+            resolve(rows);
+        });
+    });
+}
 module.exports = {
-    getAllPosts, getByCategoria, createPost, update, deleteById, getById
+    getAllPosts, getByCategoria, createPost, update, deleteById, getById, createRespuesta, getRespuestasfk
 }

@@ -162,4 +162,22 @@ Content-Type: application/json
 ###
 
 //post por id
-GET http://localhost:3000/api/foro/post/6
+GET http://localhost:3000/api/foro/post/2
+
+###
+
+//respuesta
+POST http://localhost:3000/api/foro/respuesta
+Content-Type: application/json
+
+
+{
+   "descripcion":"bien todo",
+   "fk_post": ""
+}
+
+###
+//post por id
+GET http://localhost:3000/api/foro/respuesta/5
+
+###
