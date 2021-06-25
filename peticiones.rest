@@ -108,13 +108,13 @@ GET http://localhost:3000/api/watches/
 ### Crear reloj
 POST http://localhost:3000/api/watches
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjozNSwiY2FkdWNpZGFkIjoxNjI0OTcyNzQwLCJpYXQiOjE2MjQzNjc5NDB9.mtUEMdueJyaPkXHrK3I75sR8zZ4RStUNWNZpfJ2FK-k
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoxMDUsImNhZHVjaWRhZCI6MTYyNTIyMDI0MiwiaWF0IjoxNjI0NjE1NDQyfQ.y-j7YGDC36SrmU4RUr_vUYiXbaAkmV9_4Yib9RN75ZA
 
 {
      "watch_brand":"Rolex",
      "watch_model":"Daytono",
      "owner":"Luis",
-     "availability":"yes",
+     "availability":"si",
      "notes":"Cronografo deportivo",
      "movement":"Manufactura",
      "material":"Steel",
