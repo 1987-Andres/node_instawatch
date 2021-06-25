@@ -38,9 +38,9 @@ const update = (pPostId, { titulo, descripcion, categoria }) => {
     });
 }
 
-const deleteById = (pPostId) => {
+const deleteByFk = (pDeleteFk) => {
     return new Promise((resolve, reject) => {
-        db.query('delete from nuevo_post where id = ?', [pPostId], (err, result) => {
+        db.query(`SELECT * FROM forum_respuestas where fk_post="${pDeleteFk}"`, (err, rows) => {
             if (err) reject(err);
             resolve(result);
         });
@@ -76,5 +76,5 @@ const getRespuestasfk = (pRespuestaFk) => {
     });
 }
 module.exports = {
-    getAllPosts, getByCategoria, createPost, update, deleteById, getById, createRespuesta, getRespuestasfk
+    getAllPosts, getByCategoria, createPost, update, getById, createRespuesta, getRespuestasfk, deleteByFk
 }

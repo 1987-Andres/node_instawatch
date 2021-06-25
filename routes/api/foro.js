@@ -74,8 +74,8 @@ router.put('/:postId', async (req, res) => {
     }
 });
 
-router.delete('/:postId', async (req, res) => {
-    const result = await deleteById(req.params.postId);
+router.delete('/respuesta/:postId', async (req, res) => {
+    const result = await deleteByFk(req.params.postId);
     res.json(result);
 });
 
