@@ -92,8 +92,8 @@ POST http://localhost:3000/api/users/login
 Content-Type: application/json
 
 {
-    "email": "susana@gmail.com",
-    "password": "Susana_123"
+    "email": "andres@gmail.com",
+    "password": "Andres123"
 }
 
 ###
@@ -173,7 +173,7 @@ Content-Type: application/json
 
 {
    "descripcion":"bien todo",
-   "fk_post": ""
+   "fk_post": "2"
 }
 
 ###
@@ -183,3 +183,7 @@ GET http://localhost:3000/api/foro/respuesta/5
 ###
 
 DELETE http://localhost:3000/api/foro/respuesta/8
+
+###
+//todos los relojes
+GET http://localhost:3000/api/watches/random

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { getAll, getByMarca, create, getById, getByUser } = require('../../models/watches.model');
+const { getAll, getByMarca, create, getById, getByUser, getRandom } = require('../../models/watches.model');
 const { checkToken } = require('../middleware');
 
 router.get('/', async (req, res) => {
@@ -15,6 +15,16 @@ router.get('/usuario/', checkToken, async (req, res) => {
     const relojes = await getByUser(req.user.id);
     res.json(relojes);
 })
+
+router.get('/random', async (req, res) => {
+    try {
+        const rows = await getRandom()
+        res.json(rows);
+    } catch (err) {
+        console.log(err);
+        res.json({ error: 'TODO MAL!!!' })
+    }
+});
 
 router.get('/:watchId', async (req, res) => {
     const reloj = await getById(req.params.watchId);
@@ -40,8 +50,6 @@ router.post('/', checkToken, async (req, res) => {
     const result = await create(req.body);
     res.json(result);
 });
-
-
 
 
 

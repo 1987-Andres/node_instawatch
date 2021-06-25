@@ -48,8 +48,17 @@ const getByUser = (pFk_owner) => {
     });
 }
 
+const getRandom = () => {
+    return new Promise((resolve, reject) => {
+        db.query('SELECT * FROM watches order by rand() limit 9', (err, rows) => {
+            if (err) reject(err);
+            resolve(rows);
+        })
+    })
+}
+
 
 
 module.exports = {
-    getAll, getByMarca, create, getById, getByUser
+    getAll, getByMarca, create, getById, getByUser, getRandom
 }
